@@ -1,3 +1,10 @@
+import classicAamras from "../assets/classic-aamras.jpg";
+import kesarAamras from "../assets/kesar-aamras.jpg";
+import aamrasPuri from "../assets/aamras-puri.jpg";
+import mangoLassi from "../assets/mango-lassi.jpg";
+import kulfi from "../assets/kulfi.jpg";
+import shrikhand from "../assets/shrikhand.jpg";
+
 const menuItems = [
   {
     id: 1,
@@ -5,7 +12,7 @@ const menuItems = [
     description: "Pure alphonso mango pulp, chilled to perfection",
     price: "₹99",
     category: "classic",
-    image: "/src/assets/classic-aamras.jpg"
+    image: classicAamras,
   },
   {
     id: 2,
@@ -13,7 +20,7 @@ const menuItems = [
     description: "Premium kesar mangoes with a rich golden colour",
     price: "₹149",
     category: "premium",
-    image: "/src/assets/kesar-aamras.jpg"
+    image: kesarAamras,
   },
   {
     id: 3,
@@ -21,7 +28,7 @@ const menuItems = [
     description: "Traditional combo with fluffy hot puris",
     price: "₹179",
     category: "combo",
-    image: "/src/assets/aamras-puri.jpg"
+    image: aamrasPuri,
   },
   {
     id: 4,
@@ -29,7 +36,7 @@ const menuItems = [
     description: "Creamy yogurt blended with fresh mango pulp",
     price: "₹119",
     category: "drinks",
-    image: "/src/assets/mango-lassi.jpg"
+    image: mangoLassi,
   },
   {
     id: 5,
@@ -37,7 +44,7 @@ const menuItems = [
     description: "Frozen mango dessert on a stick",
     price: "₹89",
     category: "dessert",
-    image: "/src/assets/kulfi.jpg"
+    image: kulfi,
   },
   {
     id: 6,
@@ -45,8 +52,8 @@ const menuItems = [
     description: "Thick strained yogurt with mango and cardamom",
     price: "₹129",
     category: "dessert",
-    image: "/src/assets/shrikhand.jpg"
-  }
-]
+    image: shrikhand,
+  },
+];
 
-export default menuItems
+export default menuItems;
