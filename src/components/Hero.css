@@ -3,9 +3,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 60px;
   overflow: hidden;
 }
 
@@ -14,45 +16,44 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.42) 45%,
-    rgba(0, 0, 0, 0.05) 100%
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.42) 45%,
+    rgba(0,0,0,0.08) 100%
   );
 }
 
 .hero__content {
   position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-
-  padding: 110px 70px 60px;
+  max-width: 1300px;
+  width: 100%;
+  padding-top: 80px;
+  gap: 40px;
 }
 
-/* ================= LEFT ================= */
-
 .hero__left {
+  flex: 1;
   color: white;
   z-index: 5;
 }
 
 .hero__gujarati {
-  color: #FDB515;
   font-size: 1.2rem;
   letter-spacing: 5px;
-  margin-bottom: 15px;
+  color: #FDB515;
+  margin-bottom: 18px;
+  font-weight: 500;
 }
 
 .hero__title {
-  font-size: 4.4rem;
-  line-height: 1.08;
+  font-size: 4.3rem;
   font-weight: 700;
-  margin-bottom: 25px;
+  line-height: 1.08;
+  margin-bottom: 24px;
+  color: white;
 }
 
 .hero__title span {
@@ -60,35 +61,40 @@
 }
 
 .hero__subtitle {
-  max-width: 500px;
-  line-height: 1.8;
-  opacity: .9;
-  margin-bottom: 40px;
   font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 500px;
 }
 
 .hero__buttons {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
   margin-bottom: 55px;
 }
 
 .btn {
   padding: 15px 34px;
   border-radius: 999px;
-  font-size: .95rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: .3s;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .btn--primary {
   background: #FDB515;
   color: white;
-  border: none;
 }
 
 .btn--primary:hover {
-  transform: translateY(-3px);
+  background: #e39d00;
+  transform: translateY(-2px);
 }
 
 .btn--outline {
@@ -100,6 +106,7 @@
 .btn--outline:hover {
   background: white;
   color: #111;
+  transform: translateY(-2px);
 }
 
 .hero__stats {
@@ -108,90 +115,46 @@
 }
 
 .hero__stat h3 {
-  color: #FDB515;
   font-size: 2.2rem;
+  font-weight: 700;
+  color: #FDB515;
+  margin-bottom: 5px;
 }
 
 .hero__stat p {
-  color: rgba(255,255,255,.7);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
 }
-
-/* ================= RIGHT ================= */
 
 .hero__right {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  position: relative;
+  justify-content: center;
+  align-items: center;
   overflow: visible;
+  position: relative;
 }
-
-/* Glow */
 
 .hero__right::before {
   content: "";
   position: absolute;
-
-  width: 800px;
-  height: 800px;
-
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    rgba(255,190,0,.35),
-    rgba(255,190,0,.15),
-    transparent 70%
-  );
-
-  filter: blur(70px);
-
-  right: -80px;
-  top: 40px;
-
+  background: radial-gradient(circle, rgba(255,184,28,0.25), transparent 70%);
+  filter: blur(60px);
   z-index: -1;
 }
 
-/* Bowl */
-
 .hero__bowl {
-
-  width: 900px;
+  width: 520px;
   max-width: none;
   height: auto;
-
   object-fit: contain;
-
-  transform: translate(170px,-220px);
-
-  filter: drop-shadow(0 35px 55px rgba(0,0,0,.35));
-
-  animation: float 5s ease-in-out infinite;
-
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4));
+  margin-top: -80px;
 }
 
-/* Floating */
-
-@keyframes float {
-
-  0%{
-    transform: translate(170px,-220px);
-  }
-
-  50%{
-    transform: translate(170px,-235px);
-  }
-
-  100%{
-    transform: translate(170px,-220px);
-  }
-
-}
-
-/* ================= Responsive ================= */
-
-@media (max-width: 992px) {
-
+@media (max-width: 1200px) {
   .hero__content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -210,42 +173,33 @@
   .hero__stats {
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 40px;
   }
 
   .hero__right {
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .hero__bowl {
-
-    width: 420px;
-
-    transform: none;
-
-    animation: mobileFloat 5s ease-in-out infinite;
-
-  }
-
-  @keyframes mobileFloat {
-
-    0% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-10px);
-    }
-
-    100% {
-      transform: translateY(0);
-    }
-
+    width: 380px;
+    margin-bottom: 0;
   }
 
   .hero__title {
-    font-size: 3rem;
+    font-size: 3.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.6rem;
   }
 
+  .hero__bowl {
+    width: 280px;
+  }
+
+  .hero__stats {
+    gap: 25px;
+  }
 }
